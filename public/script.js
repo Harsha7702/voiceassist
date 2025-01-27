@@ -8,7 +8,7 @@ uploadForm.addEventListener("submit", async (event) => {
   const formData = new FormData(uploadForm);
 
   try {
-    const response = await fetch("http://localhost:8080/upload", {
+    const response = await fetch("https://voiceassist.onrender.com/upload", {
       method: "POST",
       body: formData,
     });
@@ -18,7 +18,7 @@ uploadForm.addEventListener("submit", async (event) => {
     // Display the script link for embedding
     scriptLinkContainer.innerHTML = `
       <p>Embed this script in your application:</p>
-      <pre>&lt;script src="http://localhost:8080/ask/${dynamicScriptId}"&gt;&lt;/script&gt;</pre>
+      <pre>&lt;script src="https://voiceassist.onrender.com/ask/${dynamicScriptId}"&gt;&lt;/script&gt;</pre>
     `;
 
     // Show the "Ask Me Anything" button
@@ -44,7 +44,7 @@ askButton.addEventListener("click", () => {
     recognition.onresult = async (event) => {
       const question = event.results[0][0].transcript;
       try {
-        const response = await fetch(`http://localhost:8080/process-speech/${dynamicScriptId}`, {
+        const response = await fetch(`https://voiceassist.onrender.com/process-speech/${dynamicScriptId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
