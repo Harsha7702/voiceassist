@@ -56,7 +56,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
   };
 
   // Save the script link to a text file
-  const scriptLink = `http://localhost:${PORT}${redirectUrl}\n`;
+  const scriptLink = `https://voiceassist.onrender.com${redirectUrl}\n`;
   fs.appendFile("script_links.txt", scriptLink, (err) => {
     if (err) {
       console.error("Error saving script link:", err);
