@@ -18,7 +18,7 @@ uploadForm.addEventListener("submit", async (event) => {
     // Display the script link for embedding
     scriptLinkContainer.innerHTML = `
       <p>Embed this script in your application:</p>
-      <pre>&lt;script src="https://voiceassist.onrender.com/ask/${dynamicScriptId}"&gt;&lt;/script&gt;</pre>
+      <pre>&lt;iframe src="https://voiceassist.onrender.com/ask/${dynamicScriptId}"allow="microphone"&gt;&lt;/iframe&gt;</pre>
     `;
 
     // Show the "Ask Me Anything" button
